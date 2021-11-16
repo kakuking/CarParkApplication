@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Park App</title>
+</head>
+<body>
+  <div>
+      <form name="f" th:action="@{/login}" method ="post">
+          <legend>Please Login</legend>
+          <div th:if="${param.error}" class="alert alert-error">
+              Invalid Username/Password Combo
+          </div>
+
+          <div th:if="${param.logout}" class="alert alert-error">
+              You have been logged out!
+          </div>
+
+          <label for="username">E-mail : </label>
+          <input type="text" id="username" name="username"/>
+
+          <label for="password">Password : </label>
+          <input type="password" id="password" name="password"/>
+
+          <div class="form-actions">
+              <button type="submit" class="btn">Log in</button>
+          </div>
+      </form>
+
+    <div>
+      <a th:href="@{/register}">Or Register Here : </a>
+    </div>
+
+    <div>
+      <a th:href="@{/oauth2/authorization/google}">Login with google</a>
+    </div>
+  </div>
+
+</body>
+</html>
